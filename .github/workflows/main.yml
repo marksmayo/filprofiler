@@ -97,7 +97,7 @@ jobs:
             pip install dist/*-cp38-*manylinux*.whl
             mv filprofiler filprofiler.disabled
             make test-python-no-deps
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: "${{ matrix.os }}-${{ matrix.python-version }}-wheel"
           path: dist/*.whl
@@ -164,7 +164,7 @@ jobs:
         uses: pypa/cibuildwheel@v2.9.0
         with:
           output-dir: dist
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: "arm64-wheel"
           path: dist/*.whl
